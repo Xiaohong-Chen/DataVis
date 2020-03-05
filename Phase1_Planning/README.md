@@ -1,6 +1,5 @@
 # PHASE 1: Planning
-## Project Title:
-> Increasing Efficiency In Studying
+## Project Title: Increasing Efficiency In Studying
 ## Project Core Inquiry:
 > Can I get motivated in studying and improve the efficiency by improving diet, sleep and exercise?
 ## Project Rationale:
@@ -8,4 +7,4 @@
 ## Project Hypothesis:  
 > I can get motivated in studying by improving diet, sleep and exercise in a proper way. However, other factors such as weather condition might affect the result.
 ## Cause-Outcome Relationship Diagram:
->   
+> ![Cause-Outcome Relationship DIagram](cause-outcome_relationship.png)
