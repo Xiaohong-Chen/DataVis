@@ -10,6 +10,7 @@
 ## Third Party Tracking Measurement:
 > I found that the weather condition might affect my daily emotion. So I decided to use public weather report api to get daily weather condition like temperature.
 > ![Weather Column](WeatherTemperature.png)
+> ![Java Api](WeatherTemperature_java.png)
 ## Data Gathering Tool
 > ![Data Gathering Tool](DataGathering.png)
 
