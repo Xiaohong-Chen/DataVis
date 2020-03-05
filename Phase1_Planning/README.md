@@ -13,8 +13,11 @@
 ## Identify Varibles:
 > I would like to track my real study time from 14:00 to 17:00 along with daily sleep and exercise
 ## Visualization Sample:
-> Visulization Samples
+> Visulization Sample: Study and Sleep
 > ![Visulization Samples](sample1.jpg)
-> Visulization Samples
+> Visulization Sample: Study and Exercise
 > ![Visulization Samples](sample2.jpg) 
+> Visulization Sample: Study, Sleep and Exercise
+> ![Visulization Samples](sample3.jpg)
+
 
