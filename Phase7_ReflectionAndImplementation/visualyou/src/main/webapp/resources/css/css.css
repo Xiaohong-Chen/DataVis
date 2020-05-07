@@ -1,0 +1,16 @@
+.body .ui-selectbooleanbutton, body .ui-buttonset:not(.ui-splitbutton)>.ui-button {
+    width: 50%;
+    border: 1px white solid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+body .ui-panelgrid .ui-panelgrid-content{
+    border:none;
+}
+.tableInputText{
+    width: 100%;
+    padding-top: 10px;
+}
+.dataTable{
+    height: 400px;
+}

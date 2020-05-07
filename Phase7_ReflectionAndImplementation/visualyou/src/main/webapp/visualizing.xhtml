@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" type="text/css" href="css/css.css"></link>
+        <h:outputStylesheet name="css/css.css"/>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+              crossorigin="anonymous"/>
+    </h:head>
+    <h:body> 
+
+        <h:form>
+            <div class="d-flex justify-content-center align-items-center" style="height:100px;background-color: #c8c8c8;">
+
+                <h4 style="color: white">
+                    VISUALIZING YOURSELF
+
+                    <div class="pt-2">
+                        <p:commandButton   ajax="false"
+                                           styleClass="tableInputText"
+                                           action="Guide"
+                                           value="Go Back to Guid Page"
+                                           style="height: 40px;"
+                                           />
+                    </div>
+                </h4> 
+
+            </div>
+
+            <div class="p-5">
+                <div class="row p-3">
+
+                    <div class="col-xl-6 col-lg-12 ">
+
+                        <p:panel header="Data Panel | Output" >
+                            <p:outputPanel style="height:400px;">
+
+                                <p:dataTable var="study" value="#{studyBB.studyList}" scrollable="true" scrollHeight="350" >
+                                    <p:column headerText="Date">
+                                        <h:outputText value="#{study.recordDate}" />
+                                    </p:column>
+
+                                    <p:column headerText="Study Score">
+                                        <h:outputText value="#{studyBB.formatDouble(studyBB.calculateStudyScore(study))}" />
+                                    </p:column>
+
+                                    <p:column headerText="Time Effective">
+                                        <h:outputText value="#{study.timeEffective}" />
+                                    </p:column>
+
+                                    <p:column headerText="Finished Level">
+                                        <h:outputText value="#{study.finishedLevel}" />
+                                    </p:column>
+
+                                    <p:column headerText="Sleep Time">
+                                        <h:outputText value="#{study.sleepTime}" />
+                                    </p:column>
+
+                                    <p:column headerText="Exercise Time">
+                                        <h:outputText value="#{study.exerciseTime}" />
+                                    </p:column>
+                                </p:dataTable>
+                            </p:outputPanel>
+                        </p:panel>
+
+                    </div>
+                    <div class="col-xl-3 col-lg-12 ">
+                        <p:panel header="Data Panel | Study Score Average %" >
+                            <p:outputPanel style="height:400px;">
+                                <p:spacer height="30px"/>
+                                <p:chart type="donut" model="#{studyBB.donutModel}" style="height: 350px" />
+                            </p:outputPanel>
+                        </p:panel>
+                    </div>
+                    <div class="col-xl-3 col-lg-12 ">
+                        <p:panel header="Data Panel | Sleep Time" >
+                            <p:outputPanel style="height:400px;">
+                                <p:spacer height="30px"/>
+                                <p:chart type="donut" model="#{studyBB.donutModelSleep}" style="height: 350px" />
+                            </p:outputPanel>
+                        </p:panel>
+                    </div>
+                </div>
+
+                <div class="row p-3">
+                    <div class="col-xl-12 col-lg-12 ">
+                        <p:panel header="Chart | Correlation of Study and Sleep" >
+                            <p:chart type="line" model="#{studyBB.chartStudySleepModel}" />
+                        </p:panel>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col-xl-12 col-lg-12 ">
+
+                        <p:panel header="Chart | Correlation of Study and Exercise" >
+                            <p:chart type="line" model="#{studyBB.chartStudyExerciseModel}" />
+                        </p:panel>
+
+                    </div>
+                </div>
+
+                <div class="row p-3">
+                    <div class="col-xl-12 col-lg-12 ">
+                        <p:panel header="Chart | Correlation of Study and Sleep" >
+                            <p:chart type="bubble" model="#{studyBB.bubbleModel}" />
+                        </p:panel>
+                    </div>
+                </div>
+
+
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

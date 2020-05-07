@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+   
+    <managed-bean>
+        <managed-bean-name>studyBB</managed-bean-name>
+        <managed-bean-class>com.mycompany.visualyou.StudyBB</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    
+    
+    <navigation-rule>
+        <from-view-id>*</from-view-id>  
+        <navigation-case>
+            <from-outcome>Start</from-outcome>
+            <to-view-id>/start.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>*</from-view-id>  
+        <navigation-case>
+            <from-outcome>Guide</from-outcome>
+            <to-view-id>/guide.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>*</from-view-id>  
+        <navigation-case>
+            <from-outcome>Recording</from-outcome>
+            <to-view-id>/recording.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>*</from-view-id>  
+        <navigation-case>
+            <from-outcome>Visualizing</from-outcome>
+            <to-view-id>/visualizing.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+</faces-config>

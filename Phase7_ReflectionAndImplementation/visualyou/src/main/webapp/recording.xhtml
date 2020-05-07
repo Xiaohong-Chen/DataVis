@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" type="text/css" href="css/css.css"></link>
+        <h:outputStylesheet name="css/css.css"/>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+              crossorigin="anonymous"/>
+    </h:head>
+    <h:body > 
+        <h:form>
+            <div class="d-flex justify-content-center align-items-center" style="height:100px;background-color: #c8c8c8;">
+
+                <h4 style="color: white">
+                    Good Morning! Xiaohong Chen
+
+                    <div class="pt-2">
+                        <p:commandButton   ajax="false"
+                                           styleClass="tableInputText"
+                                           action="Guide"
+                                           value="Go Back to Guid Page"
+                                           style="height: 40px;"
+                                           />
+                    </div>
+                </h4> 
+
+            </div>
+            <div class="d-flex justify-content-center align-items-center" style="height:90vh;">
+
+                <div class="p-5">
+                    <div class="row p-3">
+                        <div class="col-xl-4 col-lg-12 ">
+                            <p:panel header="Data Panel | Input">
+                                <p:outputPanel style="height:300px;">
+                                    <p:panelGrid columns="2" layout="grid">
+                                        <h:panelGroup>
+                                            <p:outputLabel value="Study Time "/>
+                                            <p:spacer height="5px"/>
+                                            <p:inputText value="#{studyBB.study.timeEffective}" styleClass="tableInputText"/>
+
+                                            <p:spacer height="5px"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup>
+                                            <p:outputLabel value="Study Finished Level"/>
+                                            <p:spacer height="5px"/>
+                                            <p:inputText value="#{studyBB.study.finishedLevel}" styleClass="tableInputText"/>
+
+                                            <p:spacer height="5px"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup>
+                                            <p:outputLabel value="Sleep Time"/>
+                                            <p:spacer height="5px"/>
+                                            <p:inputText value="#{studyBB.study.sleepTime}" styleClass="tableInputText"/>
+
+                                            <p:spacer height="5px"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup>
+                                            <p:outputLabel value="Exercise Time"/>
+                                            <p:spacer height="5px"/>
+                                            <p:inputText value="#{studyBB.study.exerciseTime}" styleClass="tableInputText"/>
+
+                                            <p:spacer height="5px"/>
+                                        </h:panelGroup>
+                                    </p:panelGrid>
+                                    <p:spacer height="15px" />
+
+                                    <p:commandButton icon="fa fa-edit"
+                                                     ajax="false"
+                                                     styleClass="tableInputText"
+                                                     action="#{studyBB.insertdata()}"
+                                                     value="Insert Municipality Record"
+                                                     />
+                                </p:outputPanel>
+                            </p:panel>
+
+                        </div>
+                        <div class="col-xl-8 col-lg-12 ">
+
+                            <p:panel header="Data Panel | Output" >
+                                <p:outputPanel style="height:300px;">
+
+                                    <p:dataTable var="study" value="#{studyBB.studyList}" scrollable="true" scrollHeight="250" >
+                                        <p:column headerText="Date">
+                                            <h:outputText value="#{study.recordDate}" />
+                                        </p:column>
+
+                                        <p:column headerText="Study Score">
+                                            <h:outputText value="#{studyBB.formatDouble(studyBB.calculateStudyScore(study))}" />
+                                        </p:column>
+
+                                        <p:column headerText="Time Effective">
+                                            <h:outputText value="#{study.timeEffective}" />
+                                        </p:column>
+
+                                        <p:column headerText="Finished Level">
+                                            <h:outputText value="#{study.finishedLevel}" />
+                                        </p:column>
+
+                                        <p:column headerText="Sleep Time">
+                                            <h:outputText value="#{study.sleepTime}" />
+                                        </p:column>
+
+                                        <p:column headerText="Exercise Time">
+                                            <h:outputText value="#{study.exerciseTime}" />
+                                        </p:column>
+                                    </p:dataTable>
+                                </p:outputPanel>
+                            </p:panel>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+
+    </h:body>
+</html>
+
