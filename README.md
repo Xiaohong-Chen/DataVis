@@ -1,6 +1,10 @@
 # PHASE 7: Final-Implementation
 ## Question:
 #### Can I get motivated in studying and improve the efficiency by improving diet, sleep and exercise?
+## Study Score :
+> ![Study Score](StudyScoreGuide.png)
+## Finished Level:
+> ![Study Score Guide](StudyFinishedLevelGuide.png)
 ## Tool Chain
 > ![Study Score](ToolChain.jpg)
 ## Start Page:
